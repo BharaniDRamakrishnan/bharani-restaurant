@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu - Bharani’s Restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Bharani’s Restaurant</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">About</a>
+                    <a class="nav-link" href="menu.html">Menu</a>
+                    <a class="nav-link" href="form.html">Food Order</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="feedbackform.html">Feedback</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5" id="foodOrder">
+        <h2 class="text-center mb-4">Food Order Form</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Delivery Address</label>
+                <textarea class="form-control" id="address" rows="3" placeholder="Enter your delivery address" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Payment Method</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cash" checked>
+                    <label class="form-check-label" for="cashOnDelivery">Cash on Delivery</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="onlinePayment" value="online">
+                    <label class="form-check-label" for="onlinePayment">Online Payment</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Place Order</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

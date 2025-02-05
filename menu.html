@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu - Bharani’s Restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .menu-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item strong {
+            font-size: 18px;
+        }
+        .menu-item input {
+            width: 60px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+        .total-amount {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Bharani’s Restaurant</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">About</a>
+                    <a class="nav-link" href="menu.html">Menu</a>
+                    <a class="nav-link" href="form.html">Food Order</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="feedbackform.html">Feedback</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="menu-container">
+            <h2 class="text-center">Our Menu</h2>
+
+            <div class="menu-item">
+                <strong>Crispy Samosa:</strong> ₹50
+                <input type="number" class="qty-input" data-price="50" value="0" min="0">
+            </div>
+            <div class="menu-item">
+                <strong>Tandoori Chicken:</strong> ₹250
+                <input type="number" class="qty-input" data-price="250" value="0" min="0">
+            </div>
+            <div class="menu-item">
+                <strong>Butter Chicken:</strong> ₹300
+                <input type="number" class="qty-input" data-price="300" value="0" min="0">
+            </div>
+            <div class="menu-item">
+                <strong>Hyderabad Biryani:</strong> ₹280
+                <input type="number" class="qty-input" data-price="280" value="0" min="0">
+            </div>
+            <div class="menu-item">
+                <strong>Paneer Butter Masala:</strong> ₹220
+                <input type="number" class="qty-input" data-price="220" value="0" min="0">
+            </div>
+            <div class="menu-item">
+                <strong>Gulab Jamun:</strong> ₹80
+                <input type="number" class="qty-input" data-price="80" value="0" min="0">
+            </div>
+            <div class="total-amount">
+                Total Amount: ₹<span id="totalAmount">0</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("input", () => {
+            let total = 0;
+            document.querySelectorAll('.qty-input').forEach(input => {
+                const quantity = parseInt(input.value) || 0;
+                const price = parseInt(input.getAttribute('data-price')) || 0;
+                total += price * quantity;
+            });
+            document.getElementById("totalAmount").textContent = total;
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>
